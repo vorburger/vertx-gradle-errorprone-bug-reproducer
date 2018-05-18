@@ -1,0 +1,57 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    jcenter()
+  }
+
+  dependencies {
+    classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+  }
+}
+
+plugins {
+  // id("net.ltgt.errorprone-javacplugin") version "0.2"
+  id 'net.ltgt.errorprone' version '0.0.13'
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+// apply plugin: 'net.ltgt.errorprone-javacplugin'
+apply plugin: 'net.ltgt.errorprone'
+
+repositories {
+  mavenCentral()
+}
+
+version = '0.0.1-SNAPSHOT'
+group = 'com.example'
+sourceCompatibility = '1.8'
+mainClassName = 'io.vertx.core.Launcher'
+
+dependencies {
+  errorprone 'com.google.errorprone:error_prone_core:2.3.1'
+
+  compile 'io.vertx:vertx-core:3.5.1'
+  compile 'io.vertx:vertx-service-proxy:3.5.1'
+  compile 'io.vertx:vertx-codegen:3.5.1'
+  // annotationProcessor 'io.vertx:vertx-service-proxy:3.5.1:processor'
+
+  compile 'io.vertx:vertx-lang-js:3.5.1' // TODO provided
+  compile 'io.vertx:vertx-sockjs-service-proxy:3.5.1'
+}
+
+
+shadowJar {
+  classifier = 'fat'
+  manifest {
+    attributes 'Main-Verticle': 'com.example.minecraft.MainVerticle'
+  }
+  mergeServiceFiles {
+    include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+  }
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.13'
+}
