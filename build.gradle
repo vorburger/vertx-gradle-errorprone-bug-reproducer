@@ -35,7 +35,7 @@ dependencies {
   compile 'io.vertx:vertx-core:3.5.1'
   compile 'io.vertx:vertx-service-proxy:3.5.1'
   compile 'io.vertx:vertx-codegen:3.5.1'
-  // annotationProcessor 'io.vertx:vertx-service-proxy:3.5.1:processor'
+  annotationProcessor 'io.vertx:vertx-service-proxy:3.5.1:processor'
 
   compile 'io.vertx:vertx-lang-js:3.5.1' // TODO provided
   compile 'io.vertx:vertx-sockjs-service-proxy:3.5.1'
