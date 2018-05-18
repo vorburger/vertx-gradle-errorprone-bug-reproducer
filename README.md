@@ -2,6 +2,7 @@
 
 Small sample project reproducing problem encountered with using Vert.x APT code generator in Gradle together with Error Prone:
 
+* https://github.com/vert-x3/vertx-codegen/issues/181
 * https://github.com/vorburger/minecraft-storeys-maker/issues/53
 * https://github.com/tbroyer/gradle-errorprone-plugin/issues/70
 
