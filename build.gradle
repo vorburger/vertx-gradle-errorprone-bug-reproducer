@@ -29,6 +29,6 @@ dependencies {
   annotationProcessor 'io.vertx:vertx-service-proxy:3.5.1:processor'
   // compile 'io.vertx:vertx-service-proxy:3.5.1:processor'
 
-  compile 'io.vertx:vertx-lang-js:3.5.1' // TODO provided
+  compileOnly 'io.vertx:vertx-lang-js:3.5.1'
   compile 'io.vertx:vertx-sockjs-service-proxy:3.5.1'
 }
