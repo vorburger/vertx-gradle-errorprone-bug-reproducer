@@ -7,12 +7,12 @@ buildscript {
 
 plugins {
   // id("net.ltgt.errorprone-javacplugin") version "0.2"
-  id 'net.ltgt.errorprone' version '0.0.13'
+  // id 'net.ltgt.errorprone' version '0.0.13'
 }
 
 apply plugin: 'java'
 // apply plugin: 'net.ltgt.errorprone-javacplugin'
-apply plugin: 'net.ltgt.errorprone'
+// apply plugin: 'net.ltgt.errorprone'
 
 repositories {
   mavenCentral()
@@ -21,7 +21,7 @@ repositories {
 sourceCompatibility = '1.8'
 
 dependencies {
-  errorprone 'com.google.errorprone:error_prone_core:2.3.1'
+  // errorprone 'com.google.errorprone:error_prone_core:2.3.1'
 
   compile 'io.vertx:vertx-core:3.5.1'
   compile 'io.vertx:vertx-service-proxy:3.5.1'
